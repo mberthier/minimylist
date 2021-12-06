@@ -1,4 +1,5 @@
-<div class="container pt-5 d-flex justify-content-end">
+<div class="container pt-5 d-flex justify-content-center">
+  <img src="<%= cl_image_path @item.photo.key %>" width="250px" max-height="250px">
   <%= link_to :back do %>
     <i class="fas fa-times"></i>
   <% end %>
@@ -13,10 +14,10 @@
     <%= f.input :fit %>
     <%= f.input :favorite, as: :radio_buttons %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit %>
+    <input class="mt-5 btn btn-primary btn-lg btn-block" type="submit" name="commit" value="Update Item" data-disable-with="Update Item">
   <% end %>
   
   <%= link_to item_path(@item), method: :delete, data: { confirm: "Are you sure?" } do %>
-    <button type="button" class=" mt-5 btn btn-secondary btn-lg btn-block">Delete</button>
+    <button type="button" class=" mt-5 btn btn-outline-dark btn-lg btn-block">Delete</button>
   <% end %>
 </div>
