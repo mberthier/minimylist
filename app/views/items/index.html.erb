@@ -1,0 +1,13 @@
+<div class="container mt-5 mb-5">
+    <h1>My closet</h1>
+    <%= @items.count %>
+    <div class="container mt-5 mb-5 d-flex justify-content-center align-items-center flex-wrap">
+        <% @items.each do |item| %>
+            <div class="mb-4" style="width:24%; min-height:250px; background-position: center; background-size: contain; background-repeat: no-repeat; background-image: url('<%= cl_image_path item.photo.key %>')">
+                <%= link_to "Edit item", edit_item_path(item) %>
+                <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
+        <% end %>
+    </div>
+    <%= link_to "Add an item", new_item_path %>
+</div>

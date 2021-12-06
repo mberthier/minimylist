@@ -1,0 +1,12 @@
+<%= simple_form_for (@item) do |f| %>
+  <%= f.association :category %>
+  <%= f.association :sub_category %>
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+  <%= f.label :fabric %>
+  <%= f.text_field :fabric %>
+  <%= f.label :fit %>
+  <%= f.text_field :fit %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>

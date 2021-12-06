@@ -1,2 +1,11 @@
-<h1>This is my new web app for minimalists</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container mt-5 mb-5">
+    <h1>My closet</h1>
+    <%= Item.count %> items
+    <div class="container mt-5 mb-5 d-flex justify-content-center align-items-center flex-wrap">
+        <% Item.all.each do |item| %>
+            <%= link_to edit_item_path(item) do %>
+                <div class="mb-4" style= "width:24%; min-height:250px; background-position: center; background-size: contain; background-repeat: no-repeat; background-image: url('<%= cl_image_path item.photo.key %>')"></div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
