@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
     def index
-        @items = Item.all
+        @items = Item.all.where(user_id: current_user)
     end
 
     def new
@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-      params.require(:item).permit(:category_id, :sub_category_id, :color, :fabric, :fit, :photo)
+      params.require(:item).permit(:category_id, :sub_category_id, :color, :fabric, :fit, :favorite, :photo)
     end
     
 end

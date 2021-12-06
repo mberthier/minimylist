@@ -1,12 +1,18 @@
-<%= simple_form_for (@item) do |f| %>
-  <%= f.association :category %>
-  <%= f.association :sub_category %>
-  <%= f.label :color %>
-  <%= f.text_field :color %>
-  <%= f.label :fabric %>
-  <%= f.text_field :fabric %>
-  <%= f.label :fit %>
-  <%= f.text_field :fit %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container pt-5 d-flex justify-content-end">
+  <%= link_to :back do %>
+    <i class="fas fa-times"></i>
+  <% end %>
+</div>
+
+<div class="container mt-5 mb-5">
+  <%= simple_form_for (@item) do |f| %>
+    <%= f.association :category %>
+    <%= f.association :sub_category %>
+    <%= f.input :color %>
+    <%= f.input :fabric %>
+    <%= f.input :fit %>
+    <%= f.input :favorite, as: :radio_buttons %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>

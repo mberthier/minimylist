@@ -1,13 +1,22 @@
 <div class="container mt-5 mb-5">
     <h1>My closet</h1>
-    <%= @items.count %>
+    (<%= @items.count %>) items
     <div class="container mt-5 mb-5 d-flex justify-content-center align-items-center flex-wrap">
         <% @items.each do |item| %>
-            <div class="mb-4" style="width:24%; min-height:250px; background-position: center; background-size: contain; background-repeat: no-repeat; background-image: url('<%= cl_image_path item.photo.key %>')">
-                <%= link_to "Edit item", edit_item_path(item) %>
-                <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: "Are you sure?" } %>
+            <div class="mb-4" style="width:25%; min-height:250px; background-position: center; background-size: contain; background-repeat: no-repeat; background-image: url('<%= cl_image_path item.photo.key %>')">
+                <div class= "d-flex justify-content-around">
+                    <%= link_to edit_item_path(item) do %>
+                        <i class="far fa-edit"></i>
+                    <% end %>
+                    <%= link_to item_path(item), method: :delete, data: { confirm: "Are you sure?" } do %>
+                        <i class="fas fa-times"></i>
+                    <% end %>
+                </div>
             </div>
         <% end %>
     </div>
-    <%= link_to "Add an item", new_item_path %>
+    <%= link_to new_item_path do %>
+        Add an item
+        <i class="fas fa-plus"></i>
+    <% end %>
 </div>
