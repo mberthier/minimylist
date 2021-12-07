@@ -1,14 +1,14 @@
-<div class="container mt-5 mb-5">
-    <div class="container mt-5 mb-5 d-flex justify-content-between align-items-center flex-wrap">
+<div class="mt-5 mb-5">
+    <div class="d-flex justify-content-around align-items-center flex-wrap">
         <% @items.each do |item| %>
-            <div class="mb-4 d-flex justify-content-center" style="width:33%; height:135px;">
+            <div class="mb-4 d-flex justify-content-center" style="width:45%; height:200px;">
                     <%= link_to edit_item_path(item) do %>
                         <img src="<%= cl_image_path item.photo.key %>" width="100%" height="100%">
                     <% end %>
             </div>
         <% end %>
     </div>
-    <%= link_to(new_item_path, class: "d-flex justify-content-center align-items-center flex-column") do %>
+    <%= link_to(new_item_path, class: "mt-5 d-flex justify-content-center align-items-center flex-column") do %>
         <%= image_tag "plus-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
         Add an item
     <% end %>
