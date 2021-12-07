@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
     def index
-        @items = Item.all.where(user_id: current_user)
+        @items = Item.all.where(user_id: current_user).reorder('category_id ASC')
     end
 
     def new
@@ -35,7 +35,17 @@ class ItemsController < ApplicationController
         @item = Item.find(params[:id])
         @item.destroy
         redirect_to root_path
-      end
+    end
+
+    def all_tops
+      @items = Item.all.where(user_id: current_user)
+      @items.joins(:category).where(category: { name: "Tops" })
+    end
+
+    def all_shirts
+      @items = Item.all.where(user_id: current_user)
+      @items.joins(:sub_category).where(sub_category: { name: "Shirts" })
+    end
     
     private
 
