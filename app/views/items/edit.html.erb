@@ -1,23 +1,27 @@
-<div class="container pt-5 d-flex justify-content-center">
-  <img src="<%= cl_image_path @item.photo.key %>" width="250px" max-height="250px">
-  <%= link_to :back do %>
-    <i class="fas fa-times"></i>
-  <% end %>
-</div>
+<div class="container">
+  <div class="container pt-5 d-flex justify-content-end">
+    <%= link_to :back do %>
+      <%= image_tag "cross-svgrepo-com.svg", style: 'height:20px;width:auto;' %>
+    <% end %>
+  </div>
+  <div class="container pt-5 d-flex justify-content-center">
+    <img src="<%= cl_image_path @item.photo.key %>" width="250px" max-height="250px">
+  </div>
 
-<div class="container mt-5 mb-5">
-  <%= simple_form_for (@item) do |f| %>
-    <%= f.association :category %>
-    <%= f.association :sub_category %>
-    <%= f.input :color %>
-    <%= f.input :fabric %>
-    <%= f.input :fit %>
-    <%= f.input :favorite, as: :radio_buttons %>
-    <%= f.input :photo, as: :file %>
-    <input class="mt-5 btn btn-primary btn-lg btn-block" type="submit" name="commit" value="Update Item" data-disable-with="Update Item">
-  <% end %>
-  
-  <%= link_to item_path(@item), method: :delete, data: { confirm: "Are you sure?" } do %>
-    <button type="button" class=" mt-5 btn btn-outline-dark btn-lg btn-block">Delete</button>
-  <% end %>
+
+  <div class="mt-5 mb-5">
+    <%= simple_form_for (@item) do |f| %>
+      <%= f.association :category %>
+      <%= f.association :sub_category %>
+      <%= f.input :color, collection: ["Black", "White", "Bown", "Light grey", "Dark grey", "Beige", "Camel", "Brown", "Pink", "Navy", "Burgundy", "Forest green", "Red", "Orange", "Light blue", "Purple", "Green", "Yellow"] %>
+      <%= f.input :fabric, collection: ["Cotton", "Leather", "Mixed fabric", "Jersey", "Linen", "Wool", "Merino Wool", "Polyester", "Satin", "Lycra", "Silk", "Suede", "Tweed", "Twill", "Velvet", "Cashmeer"] %>
+      <%= f.input :fit, collection: ["Fitted", "Casual", "Skinny",] %>
+      <%= f.input :favorite, as: :radio_buttons %>
+      <%= f.input :photo, as: :file %>
+      <input class="mt-5 btn btn-primary btn-lg btn-block" type="submit" name="commit" value="Save changes" data-disable-with="Update Item">
+    <% end %> 
+    <%= link_to item_path(@item), method: :delete, data: { confirm: "Are you sure?" } do %>
+      <button type="button" class=" mt-5 btn btn-outline-dark btn-lg btn-block">Delete</button>
+    <% end %>
+  </div>
 </div>

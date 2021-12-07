@@ -12,12 +12,39 @@ puts "all instances have been deleleted"
 # Seed Categories and Sub Categories
 puts "creating Tops category and sub categories"
 
+hats = Category.new(name: "Hats")
+hats.save!
+
+bennies = SubCategory.create(name: "Bennies", category: Category.last)
+caps = SubCategory.create(name: "Caps", category: Category.last)
+fancy_hats = SubCategory.create(name: "Hats", category: Category.last)
+
+shoes = Category.new(name: "Shoes")
+shoes.save!
+
+sneakers = SubCategory.create(name: "Sneakers", category: Category.last)
+derbies = SubCategory.create(name: "Derbies", category: Category.last)
+brogues = SubCategory.create(name: "Brogues", category: Category.last)
+oxfords = SubCategory.create(name: "Oxfords", category: Category.last)
+boots = SubCategory.create(name: "Boots", category: Category.last)
+running_shoes = SubCategory.create(name: "Running Shoes", category: Category.last)
+sandals = SubCategory.create(name: "Sandals", category: Category.last)
+flip_flops = SubCategory.create(name: "Flip flops", category: Category.last)
+
 tops = Category.new(name: "Tops")
 tops.save!
 
-  shirts = SubCategory.create(name: "Shirts", category: Category.last)
-  sweatshirts = SubCategory.create(name: "Sweatshirts", category: Category.last)
-  t_shirts = SubCategory.create(name: "T-Shirts", category: Category.last)
+t_shirts = SubCategory.create(name: "T-Shirts", category: Category.last)
+tank_tops = SubCategory.create(name: "Tank tops", category: Category.last)
+shirts = SubCategory.create(name: "Shirts", category: Category.last)
+sweatshirts = SubCategory.create(name: "Sweatshirts", category: Category.last)
+knitwears = SubCategory.create(name: "Knitwears", category: Category.last)
+cardigans = SubCategory.create(name: "Cardigans", category: Category.last)
+vests = SubCategory.create(name: "Vests", category: Category.last)
+jackets = SubCategory.create(name: "Jackets", category: Category.last)
+coats = SubCategory.create(name: "Coats", category: Category.last)
+suit_jackets = SubCategory.create(name: "Suit Jackets", category: Category.last)
+
 
 puts "created Tops category and sub categories"
 
@@ -56,6 +83,9 @@ bottoms.save!
 
 jeans = SubCategory.create(name: "Jeans", category: Category.last)
 chinos = SubCategory.create(name: "Chinos", category: Category.last)
+sweatpants = SubCategory.create(name: "Sweatpants", category: Category.last)
+suit_pants = SubCategory.create(name: "Suit pants", category: Category.last)
+shorts = SubCategory.create(name: "Shorts", category: Category.last)
 
 puts "created Bottoms category and sub categories"
 

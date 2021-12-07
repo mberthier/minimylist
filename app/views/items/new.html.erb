@@ -1,6 +1,6 @@
 <div class="container pt-5 d-flex justify-content-end">
   <%= link_to :back do %>
-    <i class="fas fa-times"></i>
+    <%= image_tag "cross-svgrepo-com.svg", style: 'height:20px;width:auto;' %>
   <% end %>
 </div>
 
@@ -8,9 +8,9 @@
   <%= simple_form_for (@item) do |f| %>
     <%= f.association :category %>
     <%= f.association :sub_category %>
-    <%= f.input :color %>
-    <%= f.input :fabric %>
-    <%= f.input :fit %>
+    <%= f.input :color, collection: ["Black", "White", "Bown", "Light grey", "Dark grey", "Beige", "Camel", "Brown", "Pink", "Navy", "Burgundy", "Forest green", "Red", "Orange", "Light blue", "Purple", "Green", "Yellow"] %>
+    <%= f.input :fabric, collection: ["Cotton", "Leather", "Mixed fabric", "Jersey", "Linen", "Wool", "Merino Wool", "Polyester", "Satin", "Lycra", "Silk", "Suede", "Tweed", "Twill", "Velvet", "Cashmeer"] %>
+    <%= f.input :fit, collection: ["Fitted", "Casual", "Skinny",] %>
     <%= f.input :favorite, as: :radio_buttons %>
     <%= f.input :photo, as: :file %>
     <input class="mt-5 btn btn-primary btn-lg btn-block" type="submit" name="commit" value="Add to my closet" data-disable-with="Create Item">
