@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
     def index
-        @items = Item.all.where(user_id: current_user).reorder('category_id ASC')
+        @items = Item.all.where(user_id: current_user).order('category_id','sub_category_id')
     end
 
     def new

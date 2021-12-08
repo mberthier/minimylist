@@ -35,6 +35,8 @@ tops = Category.new(name: "Tops")
 tops.save!
 
 t_shirts = SubCategory.create(name: "T-Shirts", category: Category.last)
+
+
 tank_tops = SubCategory.create(name: "Tank tops", category: Category.last)
 shirts = SubCategory.create(name: "Shirts", category: Category.last)
 sweatshirts = SubCategory.create(name: "Sweatshirts", category: Category.last)
