@@ -8,3 +8,77 @@ a {
     color: black;
     text-decoration: none;
   }
+
+  // New and Used Item Category Forms
+  .category-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .category-item {
+    flex: 0 0 45%;
+  }
+  
+  .category-selector {
+    position: absolute;
+    transform: scale(0);
+  }
+  
+  .category-selector + label {
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    padding: 30px 10px 30px 10px;
+    border: 2px solid #EAEAEA;
+    border-radius: 4px;
+    background-color: white;
+    color: black !important;
+    margin-bottom: 16px;
+  }
+  
+  .category-selector:checked + label {
+    color: black !important;
+  }
+  
+  
+  #item_category_id_20 + label {
+    color: #black;
+  }
+  
+  #item_category_id_20:checked + label {   
+    border-color: #FFC65A;
+  }
+  
+  
+  #item_category_id_21 + label {
+    color: #black;
+  }
+  
+  #item_category_id_21:checked + label {
+    border-color: #FFC65A;
+  }
+  
+  
+  #item_category_id_22 + label {
+    color: #black;
+  }
+  
+  #item_category_id_22:checked + label {
+    border-color: #FFC65A;
+  }
+
+  #item_category_id_23 + label {
+    color: #black;
+  }
+  
+  #item_category_id_23:checked + label {
+    border-color: #FFC65A;
+  }
+
+  .was-validated .form-control:valid, .form-control.is-valid {
+    background: white;
+  }

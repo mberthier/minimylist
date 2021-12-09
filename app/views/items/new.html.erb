@@ -6,7 +6,12 @@
 
 <div class="container mt-5 mb-5">
   <%= simple_form_for (@item) do |f| %>
-    <%= f.association :category %>
+    <%= f.association :category,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'} %>
     <%= f.association :sub_category %>
     <%= f.input :color, collection: ["Black", "White", "Bown", "Light grey", "Dark grey", "Beige", "Camel", "Brown", "Pink", "Navy", "Burgundy", "Forest green", "Red", "Orange", "Light blue", "Purple", "Green", "Yellow"] %>
     <%= f.input :fabric, collection: ["Cotton", "Leather", "Mixed fabric", "Jersey", "Linen", "Wool", "Merino Wool", "Polyester", "Satin", "Lycra", "Silk", "Suede", "Tweed", "Twill", "Velvet", "Cashmeer"] %>
