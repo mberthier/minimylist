@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="container pt-5 d-flex justify-content-end">
+  <div class="container pt-3 pb-3 d-flex justify-content-end">
     <%= link_to :back do %>
       <%= image_tag "cross-svgrepo-com.svg", style: 'height:20px;width:auto;' %>
     <% end %>
   </div>
-  <div class="container pt-5 d-flex justify-content-center">
-    <img src="<%= cl_image_path @item.photo.key %>" width="250px" max-height="250px">
+  <div class="d-flex justify-content-center">
+    <img src="<%= cl_image_path @item.photo.key %>" width="100%" max-height="250px">
   </div>
 
 
@@ -20,8 +20,7 @@
       <%= f.association :sub_category %>
       <%= f.input :color, collection: ["Black", "White", "Bown", "Light grey", "Dark grey", "Beige", "Camel", "Brown", "Pink", "Navy", "Burgundy", "Forest green", "Red", "Orange", "Light blue", "Purple", "Green", "Yellow"] %>
       <%= f.input :fabric, collection: ["Cotton", "Leather", "Mixed fabric", "Jersey", "Linen", "Wool", "Merino Wool", "Polyester", "Satin", "Lycra", "Silk", "Suede", "Tweed", "Twill", "Velvet", "Cashmeer"] %>
-      <%= f.input :fit, collection: ["Fitted", "Casual", "Skinny",] %>
-      <%= f.input :favorite, as: :radio_buttons %>
+      <%= f.input :favorite, input_html: { class: "toggle" } %>
       <%= f.input :photo, as: :file %>
       <input class="mt-5 btn btn-primary btn-lg btn-block" type="submit" name="commit" value="Save changes" data-disable-with="Update Item">
     <% end %> 
