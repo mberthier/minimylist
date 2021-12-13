@@ -37,6 +37,13 @@ class ItemsController < ApplicationController
         redirect_to root_path
     end
 
+    def styles
+      @items = Item.all.where(user_id: current_user)
+      @tops = @items.joins(:category).where(category: { name: "Tops" })
+      @bottoms = @items.joins(:category).where(category: { name: "Bottoms" })
+      @shoes = @items.joins(:category).where(category: { name: "Shoes" })
+    end
+
     def all_tops
       @items = Item.all.where(user_id: current_user)
       @items.joins(:category).where(category: { name: "Tops" })
