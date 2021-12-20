@@ -1,6 +1,5 @@
- <div class="container mb-5">
-  <div style="height: 80vh; overflow:hidden; background-color:white; display:flex; justify-content:space-evenly; flex-direction:column;">
 
+  <div style="height: 80vh; overflow:hidden; background-color:white; display:flex; justify-content:space-evenly; flex-direction:column; margin-top:8px">
       <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel" data-interval="false" style="width:100%; height:30vh">
         <div class="carousel-inner" style="height:100%;" >
           <% @tops.each_with_index do |item, index| %>
@@ -69,7 +68,7 @@
       </div>
 
   </div>
-  <div style="display:flex; justify-content: space-between;">
+  <div class="container mb-5" style="display:flex; justify-content: space-around;">
     <%= link_to(root_path, class: "mt-5 d-flex justify-content-center align-items-center flex-column") do %>
       <%= image_tag "closet-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
       Closet
@@ -83,4 +82,3 @@
       Change
     <% end %>
     </div>
-</div>
