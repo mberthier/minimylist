@@ -10,18 +10,18 @@
             </div>
         <% end %>
     </div>
-    <div style="display:flex; justify-content: space-around;">
-    <%= link_to(root_path, class: "mt-5 d-flex justify-content-center align-items-center flex-column") do %>
-        <%= image_tag "closet-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
-        Closet
-    <% end %>
-    <%= link_to(new_item_path, class: "mt-5 d-flex justify-content-center align-items-center flex-column") do %>
-        <%= image_tag "plus-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
-        Add an item
-    <% end %>
-    <%= link_to(styles_item_get_path, class: "mt-5 d-flex justify-content-center align-items-center flex-column") do %>
-        <%= image_tag "clothes-rack-01-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
-        Change
-    <% end %>
-    </div>
+</div>
+<div class="pt-3 pb-3" style="display:flex; justify-content:space-around; border-top:1px solid black; background-color:white;">
+<%= link_to(root_path, class: "d-flex justify-content-center align-items-center flex-column") do %>
+    <%= image_tag "closet-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
+    Closet
+<% end %>
+<%= link_to(new_item_path, class: "d-flex justify-content-center align-items-center flex-column") do %>
+    <%= image_tag "plus-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
+    Add an item
+<% end %>
+<%= link_to(styles_item_get_path, class: "d-flex justify-content-center align-items-center flex-column") do %>
+    <%= image_tag "clothes-rack-01-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
+    Change
+<% end %>
 </div>

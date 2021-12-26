@@ -1,5 +1,5 @@
 
-  <div style="height: 80vh; overflow:hidden; background-color:white; display:flex; justify-content:space-evenly; flex-direction:column; margin-top:8px">
+  <div class="mb-5" style="height: 80vh; overflow:hidden; background-color:; display:flex; justify-content:space-evenly; flex-direction:column; margin-top:8px">
       <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel" data-interval="false" style="width:100%; height:30vh">
         <div class="carousel-inner" style="height:100%;" >
           <% @tops.each_with_index do |item, index| %>
@@ -68,16 +68,16 @@
       </div>
 
   </div>
-  <div class="container mb-5" style="display:flex; justify-content: space-around;">
-    <%= link_to(root_path, class: "mt-5 d-flex justify-content-center align-items-center flex-column") do %>
+  <div class="pt-3 pb-3" style="display:flex; justify-content: space-around; border-top: 1px solid black; background-color:white;">
+    <%= link_to(root_path, class: "d-flex justify-content-center align-items-center flex-column") do %>
       <%= image_tag "closet-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
       Closet
     <% end %>
-    <%= link_to(new_item_path, class: "mt-5 d-flex justify-content-center align-items-center flex-column") do %>
+    <%= link_to(new_item_path, class: "d-flex justify-content-center align-items-center flex-column") do %>
       <%= image_tag "plus-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
       Add an item
     <% end %>
-    <%= link_to(styles_item_get_path, class: "mt-5 d-flex justify-content-center align-items-center flex-column") do %>
+    <%= link_to(styles_item_get_path, class: "d-flex justify-content-center align-items-center flex-column") do %>
       <%= image_tag "clothes-rack-01-svgrepo-com.svg", style: 'height:40px;width:auto;' %>
       Change
     <% end %>
